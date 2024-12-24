@@ -2,14 +2,21 @@
 // Write, Edit and Run your Javascript code using JS Online Compiler
 
 console.log("Try programiz.pro");
-let res;
+
 let promise = new Promise(function (resolve, reject) {
-  res = fetch("https://httpbin.org/get");
-  resolve(res);
+  let res = fetch("https://httpbin.or/get");
+  if (res.ok) {
+    resolve(res);
+  } else {
+    reject("nfjjnj");
+  }
 });
 
-promise.then((result) => {
+promise.then((res) => {
   console.log(res);
+});
+promise.catch((error) => {
+  console.log(error);
 });
 
 //console.log(res);
